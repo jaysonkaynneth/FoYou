@@ -13,6 +13,13 @@
 		96B991D02997490900F6FB25 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 96B991CF2997490900F6FB25 /* Preview Assets.xcassets */; };
 		96B991D22997490900F6FB25 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B991D12997490900F6FB25 /* Persistence.swift */; };
 		96B991D52997490900F6FB25 /* FoYou.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 96B991D32997490900F6FB25 /* FoYou.xcdatamodeld */; };
+		96B991DD299754F600F6FB25 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B991DC299754F600F6FB25 /* MainView.swift */; };
+		96B991DF299755A700F6FB25 /* SavedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B991DE299755A700F6FB25 /* SavedView.swift */; };
+		96B991E629975D7100F6FB25 /* JosefinSans-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 96B991E129975D7100F6FB25 /* JosefinSans-SemiBold.ttf */; };
+		96B991E729975D7100F6FB25 /* JosefinSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 96B991E229975D7100F6FB25 /* JosefinSans-Bold.ttf */; };
+		96B991E829975D7100F6FB25 /* JosefinSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 96B991E329975D7100F6FB25 /* JosefinSans-Regular.ttf */; };
+		96B991E929975D7100F6FB25 /* JosefinSans-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 96B991E429975D7100F6FB25 /* JosefinSans-Light.ttf */; };
+		96B991EA29975D7100F6FB25 /* JosefinSans-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 96B991E529975D7100F6FB25 /* JosefinSans-Medium.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +30,14 @@
 		96B991CF2997490900F6FB25 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		96B991D12997490900F6FB25 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		96B991D42997490900F6FB25 /* FoYou.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FoYou.xcdatamodel; sourceTree = "<group>"; };
+		96B991DC299754F600F6FB25 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		96B991DE299755A700F6FB25 /* SavedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedView.swift; sourceTree = "<group>"; };
+		96B991E129975D7100F6FB25 /* JosefinSans-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "JosefinSans-SemiBold.ttf"; sourceTree = "<group>"; };
+		96B991E229975D7100F6FB25 /* JosefinSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "JosefinSans-Bold.ttf"; sourceTree = "<group>"; };
+		96B991E329975D7100F6FB25 /* JosefinSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "JosefinSans-Regular.ttf"; sourceTree = "<group>"; };
+		96B991E429975D7100F6FB25 /* JosefinSans-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "JosefinSans-Light.ttf"; sourceTree = "<group>"; };
+		96B991E529975D7100F6FB25 /* JosefinSans-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "JosefinSans-Medium.ttf"; sourceTree = "<group>"; };
+		96B991EB29975DDB00F6FB25 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,12 +70,15 @@
 		96B991C72997490900F6FB25 /* FoYou */ = {
 			isa = PBXGroup;
 			children = (
+				96B991EB29975DDB00F6FB25 /* Info.plist */,
 				96B991C82997490900F6FB25 /* FoYouApp.swift */,
+				96B991DC299754F600F6FB25 /* MainView.swift */,
 				96B991CA2997490900F6FB25 /* ContentView.swift */,
-				96B991CC2997490900F6FB25 /* Assets.xcassets */,
-				96B991D12997490900F6FB25 /* Persistence.swift */,
-				96B991D32997490900F6FB25 /* FoYou.xcdatamodeld */,
+				96B991DE299755A700F6FB25 /* SavedView.swift */,
+				96B991DB2997493700F6FB25 /* Model */,
 				96B991CE2997490900F6FB25 /* Preview Content */,
+				96B991CC2997490900F6FB25 /* Assets.xcassets */,
+				96B991E029975CE400F6FB25 /* Custom Fonts */,
 			);
 			path = FoYou;
 			sourceTree = "<group>";
@@ -71,6 +89,27 @@
 				96B991CF2997490900F6FB25 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		96B991DB2997493700F6FB25 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				96B991D12997490900F6FB25 /* Persistence.swift */,
+				96B991D32997490900F6FB25 /* FoYou.xcdatamodeld */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		96B991E029975CE400F6FB25 /* Custom Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				96B991E229975D7100F6FB25 /* JosefinSans-Bold.ttf */,
+				96B991E429975D7100F6FB25 /* JosefinSans-Light.ttf */,
+				96B991E529975D7100F6FB25 /* JosefinSans-Medium.ttf */,
+				96B991E329975D7100F6FB25 /* JosefinSans-Regular.ttf */,
+				96B991E129975D7100F6FB25 /* JosefinSans-SemiBold.ttf */,
+			);
+			path = "Custom Fonts";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -132,6 +171,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				96B991D02997490900F6FB25 /* Preview Assets.xcassets in Resources */,
+				96B991E729975D7100F6FB25 /* JosefinSans-Bold.ttf in Resources */,
+				96B991E629975D7100F6FB25 /* JosefinSans-SemiBold.ttf in Resources */,
+				96B991E929975D7100F6FB25 /* JosefinSans-Light.ttf in Resources */,
+				96B991EA29975D7100F6FB25 /* JosefinSans-Medium.ttf in Resources */,
+				96B991E829975D7100F6FB25 /* JosefinSans-Regular.ttf in Resources */,
 				96B991CD2997490900F6FB25 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -145,7 +189,9 @@
 			files = (
 				96B991D52997490900F6FB25 /* FoYou.xcdatamodeld in Sources */,
 				96B991D22997490900F6FB25 /* Persistence.swift in Sources */,
+				96B991DF299755A700F6FB25 /* SavedView.swift in Sources */,
 				96B991CB2997490900F6FB25 /* ContentView.swift in Sources */,
+				96B991DD299754F600F6FB25 /* MainView.swift in Sources */,
 				96B991C92997490900F6FB25 /* FoYouApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -278,6 +324,7 @@
 				DEVELOPMENT_TEAM = RZWUV85Y3A;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = FoYou/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -307,6 +354,7 @@
 				DEVELOPMENT_TEAM = RZWUV85Y3A;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = FoYou/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
