@@ -16,6 +16,7 @@ struct SavedView: View {
     
     @State private var showAddFlowerView = false
     @State private var image: Data = .init(count: 0)
+    @State private var showTabBar = false
     
     var body: some View {
         NavigationView {
@@ -30,7 +31,9 @@ struct SavedView: View {
                     ScrollView {
                         LazyVGrid(columns: Array(repeating: GridItem(.flexible()), count: 2)) {
                             
-                            ForEach(flowers) { flower in
+                            ForEach(flowers.filter {
+                                $0.isFavorite == true
+                            }) { flower in
                                 NavigationLink {
                                     
                                     FlowerView(flower: flower)
@@ -41,35 +44,21 @@ struct SavedView: View {
                                             RoundedRectangle(cornerRadius: 20)
                                                 .stroke(.clear))
                                         
-//                                        VStack {
-//                                            ZStack {
-//                                                Image(uiImage: UIImage(data: flower.image ?? self.image)!)
-//                                                    .renderingMode(.original)
-//                                                    .resizable()
-//                                                    .frame(width: 165, height: 150)
-//                                                    .clipShape(RoundedRectangle(cornerRadius: 20))
-//                                                HStack {
-//                                                    Spacer()
-//                                                    Button {
-//                                                        moc.delete(flower)
-//                                                        try? moc.save()
-//                                                    } label: {
-//                                                        Text("x")
-//                                                            .fontWeight(.heavy)
-//                                                            .foregroundColor(.white)
-//                                                            
-//                                                    }
-//                                                }
-//                                                .offset(y: -60)
-//                                                .padding()
-//                                            }
-//                                            Spacer()
-//                                            
-//                                            Text(flower.name!)
-//                                                .foregroundColor(.black)
-//                                                .font(.custom("JosefinSans-Medium", size: 18))
-//                                                .padding(.bottom)
-//                                        }
+                                        VStack {
+                                            ZStack {
+                                                Image(uiImage: UIImage(data: flower.image ?? self.image)!)
+                                                    .renderingMode(.original)
+                                                    .resizable()
+                                                    .frame(width: 165, height: 150)
+                                                    .clipShape(RoundedRectangle(cornerRadius: 20))
+                                            }
+                                            Spacer()
+                                            
+                                            Text(flower.name!)
+                                                .foregroundColor(.black)
+                                                .font(.custom("JosefinSans-Medium", size: 18))
+                                                .padding(.bottom)
+                                        }
                                     }
                                 }
                             }
@@ -80,8 +69,11 @@ struct SavedView: View {
             
                 }
             }
+            .toolbar(showTabBar ? .visible : .hidden, for: .tabBar)
             .preferredColorScheme(.light)
             .padding()
+        }.onAppear {
+            self.showTabBar = true
         }
     }
 }

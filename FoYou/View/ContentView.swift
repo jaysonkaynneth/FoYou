@@ -16,6 +16,8 @@ struct ContentView: View {
     
     @State private var showAddFlowerView = false
     @State private var image: Data = .init(count: 0)
+    @State private var isPressed = false
+    @State private var showAlert = false
     
     var body: some View {
         NavigationView {
@@ -48,16 +50,49 @@ struct ContentView: View {
                                                     .resizable()
                                                     .frame(width: 165, height: 150)
                                                     .clipShape(RoundedRectangle(cornerRadius: 20))
+                                                
+                                                HStack {
+                                                    Button {
+                                                        isPressed.toggle()
+                                                        flower.isFavorite.toggle()
+                                                        try? moc.save()
+                                                        print(flower.isFavorite)
+                                                    } label: {
+                                                        ZStack {
+                                                            Circle()
+                                                                .foregroundColor(.white)
+                                                                .frame(width: 30, height: 30)
+                                                                .shadow(radius: 4)
+                                                            
+                                                            Image(systemName: flower.isFavorite ? "heart.fill" : "heart")
+                                                        }
+                                                    }
+                                                    Spacer()
+                                                }.offset(x: 10, y: -55)
                                                 HStack {
                                                     Spacer()
-                                                    Button {
-                                                        moc.delete(flower)
-                                                        try? moc.save()
-                                                    } label: {
-                                                        Text("x")
-                                                            .fontWeight(.heavy)
-                                                            .foregroundColor(.white)
+                                                    VStack {
+                                                        Button {
+                                                            showAlert = true
+                                                        } label: {
+                                                            Text("x")
+                                                                .fontWeight(.heavy)
+                                                                .foregroundColor(.white)
                                                             
+                                                        }
+                                                        .alert(isPresented: $showAlert) {
+                                                            Alert(
+                                                                title: Text("Delete this flower?"),
+                                                                message: Text("Are you sure you want to delete this flower?"),
+                                                                primaryButton: .destructive(Text("Yes"), action: {
+                                                                    moc.delete(flower)
+                                                                    try? moc.save()
+                                                                    presentationMode.wrappedValue.dismiss()
+                                                                }),
+                                                                secondaryButton: .cancel(Text("No"), action: {
+                                                                })
+                                                            )
+                                                        }
                                                     }
                                                 }
                                                 .offset(y: -60)

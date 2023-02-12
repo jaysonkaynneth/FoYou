@@ -126,11 +126,13 @@ struct AddFlowerView: View {
                     flower.name = (name)
                     flower.url = (url)
                     flower.image = (image)
+                    flower.isFavorite = false
                   
                     try! moc.save()
                     presentationMode.wrappedValue.dismiss()
                     print(flower.name!)
                     print(flower.url!)
+                    print(flower.isFavorite)
                 
                 } label: {
                     ZStack {

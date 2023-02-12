@@ -20,30 +20,34 @@ struct FlowerView: View {
     @State private var image: Data = .init(count: 0)
     @State private var selectedItems: [PhotosPickerItem] = []
     @State private var placeHolderImage: Data = .init(count: 0)
-    @State private var isPressed = false
     
     var body: some View {
         ZStack {
             VStack {
                 HStack {
+                    Button {
+                        presentationMode.wrappedValue.dismiss()
+                        showTabBar.toggle()
+                    } label: {
+                        Text("Back")
+                    }
+                    .foregroundColor(Color(red: 255/255, green: 105/255, blue: 120/255))
+                    
                     Spacer()
-                        Button {
-                            isPressed.toggle()
+                    
+                    Button {
+                    openWhatsapp()
+                    } label: {
+                        ZStack {
+                            RoundedRectangle(cornerRadius: 35)
+                                .frame(width: 170, height: 30)
                             
-                        } label: {
-                            ZStack {
-                                Circle()
-                                    .foregroundColor(.white)
-                                    .frame(width: 30, height: 30)
-                                    .shadow(radius: 4)
-                                if isPressed == false {
-                                    Image(systemName: "heart")
-                                }
-                                else if isPressed == true {
-                                    Image(systemName: "heart.fill")
-                                }
-                            }
+                            Text("Notify Boyfriend")
+                                .font(Font.custom("JosefinSans-Medium", size: 18))
+                                .foregroundColor(Color(red: 252/255, green: 252/255, blue: 249/255))
                         }
+                    }
+                    .foregroundColor(Color(red: 255/255, green: 105/255, blue: 120/255))
                 }
                 .padding(.trailing)
                 .padding(.bottom)
@@ -166,10 +170,6 @@ struct FlowerView: View {
                         flower.image = (image)
                     }
                     
-                    if isPressed == true {
-                        
-                    }
-                    
                     flower.name = (name)
                     flower.url = (url)
                     flower.image = (image)
@@ -178,6 +178,9 @@ struct FlowerView: View {
                     presentationMode.wrappedValue.dismiss()
                     print(flower.name!)
                     print(flower.url!)
+                    print(flower.isFavorite)
+                    
+                    showTabBar = true
                 
                 } label: {
                     ZStack {
@@ -190,6 +193,7 @@ struct FlowerView: View {
                     }
                 }
                 .foregroundColor(Color(red: 255/255, green: 105/255, blue: 120/255))
+                
             }
         }
         .onAppear {
@@ -201,5 +205,23 @@ struct FlowerView: View {
         .padding()
         .navigationBarHidden(true)
         .navigationBarTitle("")
+    }
+    
+    func openWhatsapp(){
+        let urlWhats = "whatsapp://send?phone=+625171601601"
+        if let urlString = urlWhats.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed){
+            if let whatsappURL = URL(string: urlString) {
+                if UIApplication.shared.canOpenURL(whatsappURL){
+                    if #available(iOS 10.0, *) {
+                        UIApplication.shared.open(whatsappURL, options: [:], completionHandler: nil)
+                    } else {
+                        UIApplication.shared.openURL(whatsappURL)
+                    }
+                }
+                else {
+                    print("Install Whatsapp")
+                }
+            }
+        }
     }
 }
