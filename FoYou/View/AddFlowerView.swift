@@ -34,8 +34,6 @@ struct AddFlowerView: View {
                                     .clipShape(
                                         RoundedRectangle(cornerRadius: 20)
                                     )
-                                   
-                                   
                             }
                             
                         } else {

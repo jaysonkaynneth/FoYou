@@ -10,5 +10,9 @@
 		<string>JosefinSans-Regular.ttf</string>
 		<string>JosefinSans-SemiBold.ttf</string>
 	</array>
+    <key>LSApplicationQueriesSchemes</key>
+     <array>
+        <string>whatsapp</string>
+     </array>
 </dict>
 </plist>

@@ -198,7 +198,7 @@ struct FlowerView: View {
         }
         .onAppear {
             self.name = flower.name ?? ""
-            self.url = flower.url ?? ""
+            self.url = flower.url ?? "URL"
             self.image = flower.image!
         }
         .toolbar(showTabBar ? .visible : .hidden, for: .tabBar)
@@ -207,8 +207,8 @@ struct FlowerView: View {
         .navigationBarTitle("")
     }
     
-    func openWhatsapp(){
-        let urlWhats = "whatsapp://send?phone=+625171601601"
+    func openWhatsapp() {
+        let urlWhats = "whatsapp://send?phone=+6285171601601&text=I want this flower \"\(flower.name!)\" from here \(flower.url ?? "URL"). Fulfill your boyfriendly duties, please!"
         if let urlString = urlWhats.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed){
             if let whatsappURL = URL(string: urlString) {
                 if UIApplication.shared.canOpenURL(whatsappURL){
@@ -219,7 +219,7 @@ struct FlowerView: View {
                     }
                 }
                 else {
-                    print("Install Whatsapp")
+                    print("Error")
                 }
             }
         }

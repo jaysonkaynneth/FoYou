@@ -23,6 +23,7 @@
 		96B991ED2997A99300F6FB25 /* StartUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B991EC2997A99300F6FB25 /* StartUpView.swift */; };
 		96B991F02997BB9700F6FB25 /* AddFlowerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B991EF2997BB9700F6FB25 /* AddFlowerView.swift */; };
 		96B991F22997CED200F6FB25 /* FlowerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B991F12997CED200F6FB25 /* FlowerView.swift */; };
+		96EE61FC299954FE00F11246 /* RandomImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96EE61FB299954FE00F11246 /* RandomImage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		96B991EC2997A99300F6FB25 /* StartUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartUpView.swift; sourceTree = "<group>"; };
 		96B991EF2997BB9700F6FB25 /* AddFlowerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFlowerView.swift; sourceTree = "<group>"; };
 		96B991F12997CED200F6FB25 /* FlowerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowerView.swift; sourceTree = "<group>"; };
+		96EE61FB299954FE00F11246 /* RandomImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomImage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,9 +124,10 @@
 				96B991DC299754F600F6FB25 /* MainView.swift */,
 				96B991EC2997A99300F6FB25 /* StartUpView.swift */,
 				96B991CA2997490900F6FB25 /* ContentView.swift */,
-				96B991F12997CED200F6FB25 /* FlowerView.swift */,
 				96B991EF2997BB9700F6FB25 /* AddFlowerView.swift */,
+				96B991F12997CED200F6FB25 /* FlowerView.swift */,
 				96B991DE299755A700F6FB25 /* SavedView.swift */,
+				96EE61FB299954FE00F11246 /* RandomImage.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -208,6 +211,7 @@
 				96B991F02997BB9700F6FB25 /* AddFlowerView.swift in Sources */,
 				96B991D22997490900F6FB25 /* Persistence.swift in Sources */,
 				96B991DF299755A700F6FB25 /* SavedView.swift in Sources */,
+				96EE61FC299954FE00F11246 /* RandomImage.swift in Sources */,
 				96B991CB2997490900F6FB25 /* ContentView.swift in Sources */,
 				96B991DD299754F600F6FB25 /* MainView.swift in Sources */,
 				96B991ED2997A99300F6FB25 /* StartUpView.swift in Sources */,
